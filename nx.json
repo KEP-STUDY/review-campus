@@ -11,7 +11,7 @@
     "nx.json": "*"
   },
   "affected": {
-    "defaultBase": "master"
+    "defaultBase": "main"
   },
   "npmScope": "review-campus",
   "tasksRunnerOptions": {
@@ -25,6 +25,13 @@
   "projects": {
     "server": {
       "tags": []
+    },
+    "client": {
+      "tags": []
+    },
+    "client-e2e": {
+      "tags": [],
+      "implicitDependencies": ["client"]
     }
   }
 }
