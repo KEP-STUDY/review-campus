@@ -14,11 +14,13 @@
 
 ## Skill Stack
 
+> [Nx mono-repo](https://nx.dev/)
+
 - Client
 
   - React with Typescript
+  - Redux (Ducks Pattern)
   - NextJS
-  - Relay (GraphQL)
   - Material UI
   - Styled Components
 
@@ -36,4 +38,5 @@
 - [Denis](https://github.com/BuildTheTruth)
 - [Harry](https://github.com/minkukjo)
 - [Aaron](https://github.com/beingPracticer)
-- [Gabi](https://github.com/yuyu413?tab=followers)
+- [Gabi](https://github.com/yuyu413)
+- [Tyki](https://github.com/popcon9424)
