@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, HeaderProps } from './header'
+import Header from './header'
 
 export default {
   component: Header,
@@ -7,8 +7,5 @@ export default {
 }
 
 export const primary = () => {
-  /* eslint-disable-next-line */
-  const props: HeaderProps = {}
-
   return <Header />
 }

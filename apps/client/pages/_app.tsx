@@ -1,9 +1,9 @@
 import React from 'react'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
-import { Header } from 'components'
 import { ThemeProvider } from 'styled-components'
 import theme from 'utils/theme'
+import { GlobalStyle } from 'styles/global-style'
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
@@ -11,12 +11,8 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>리뷰 캠퍼스</title>
       </Head>
-      <div className="app">
-        <Header />
-        <main>
-          <Component {...pageProps} />
-        </main>
-      </div>
+      <GlobalStyle />
+      <Component {...pageProps} />
     </ThemeProvider>
   )
 }
