@@ -1,4 +1,4 @@
-import { Controller, Get, Query, Redirect } from '@nestjs/common'
+import { Controller, Get, Query } from '@nestjs/common'
 import { AppService } from './app.service'
 
 @Controller()
@@ -10,17 +10,11 @@ export class AppController {
     return this.appService.getData()
   }
 
-  @Get('/oauth')
-  @Redirect(process.env.CLIENT_URL)
-  async getOauth(@Query('code') code: string) {
+  @Get('/profile')
+  async getProfile(@Query('token') token: string) {
     try {
-      const tokenResponse = await this.appService.getToken(code)
-      const accessToken = tokenResponse.data.access_token
-      const resourceResponse = await this.appService.getResource(accessToken)
-      const profile = resourceResponse.data.properties
-      return {
-        url: `${process.env.CLIENT_URL}/login?nickname=${profile.nickname}&profile_image=${profile.profile_image}`,
-      }
+      const res = await this.appService.getKakaoUser(token)
+      return res.data.properties
     } catch (err) {
       console.log(err)
     }
