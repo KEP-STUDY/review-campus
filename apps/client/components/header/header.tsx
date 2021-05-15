@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import * as S from './header.styled'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -6,16 +6,13 @@ import Button from '@material-ui/core/Button'
 import MenuIcon from '@material-ui/icons/Menu'
 import IconButton from '@material-ui/core/IconButton'
 import { KAKAO_OAUTH2_URL } from 'api/auth'
+import { User } from 'interfaces'
 
-function Header() {
-  const [nickname, setNickname] = useState('')
-  const [profileImage, setProfileImage] = useState('')
+interface Props {
+  user?: User
+}
 
-  useEffect(() => {
-    setNickname(sessionStorage.getItem('nickname'))
-    setProfileImage(sessionStorage.getItem('profileImage'))
-  }, [])
-
+function Header({ user }: Props) {
   return (
     <S.Container>
       <AppBar position="static">
@@ -24,10 +21,10 @@ function Header() {
             <MenuIcon />
           </IconButton>
           <S.Title variant="h6">리뷰캠퍼스</S.Title>
-          {nickname && profileImage ? (
+          {user ? (
             <S.ProfileWrapper>
-              <S.Nickname> {nickname}</S.Nickname>
-              <S.ProfileIamge src={profileImage} alt="profile-iamge" />
+              <S.Nickname> {user.nickname}</S.Nickname>
+              <S.ProfileIamge src={user.profileImage} alt="profile-iamge" />
             </S.ProfileWrapper>
           ) : (
             <S.LoginLink color="inherit" href={KAKAO_OAUTH2_URL}>
