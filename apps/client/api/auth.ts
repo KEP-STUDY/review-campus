@@ -1,6 +1,6 @@
-import { ResponseSuccessHandler, ResponseErrorHandler, Token } from 'interfaces'
+import request, { ResponseSuccessHandler, ResponseErrorHandler } from '.'
+import { Token } from 'interfaces'
 import qs from 'querystring'
-import request from '.'
 
 export const KAKAO_OAUTH2_URL = `${process.env.NEXT_PUBLIC_KAUTH_URL}/oauth/authorize?response_type=code&client_id=${process.env.NEXT_PUBLIC_APP_KEY}&redirect_uri=${process.env.NEXT_PUBLIC_KAUTH_REDIRECT_URI}`
 
