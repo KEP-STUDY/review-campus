@@ -28,8 +28,11 @@ const request = async <T>({
   onSuccess,
   onError,
 }: RequestProps<T>) => {
+  const hasData = ['get', 'delete'].indexOf(method) < 0
   try {
-    const res = await customAxios[method]<T>(url, data, config)
+    const res = await (hasData
+      ? customAxios[method]<T>(url, data, config)
+      : customAxios[method]<T>(url, config))
     await onSuccess(res)
   } catch (err) {
     await onError(err)
