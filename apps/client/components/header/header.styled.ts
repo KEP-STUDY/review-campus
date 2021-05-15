@@ -23,8 +23,3 @@ export const ProfileWrapper = styled.div`
 export const Nickname = styled.span`
   margin-right: 16px;
 `
-
-export const ProfileIamge = styled.img`
-  width: 45px;
-  height: 45px;
-`

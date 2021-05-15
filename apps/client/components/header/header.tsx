@@ -1,12 +1,14 @@
 import React from 'react'
 import * as S from './header.styled'
+import { KAKAO_OAUTH2_URL } from 'api/auth'
+import { User } from 'interfaces'
+
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Button from '@material-ui/core/Button'
 import MenuIcon from '@material-ui/icons/Menu'
 import IconButton from '@material-ui/core/IconButton'
-import { KAKAO_OAUTH2_URL } from 'api/auth'
-import { User } from 'interfaces'
+import Avatar from '@material-ui/core/Avatar'
 
 interface Props {
   user?: User
@@ -24,7 +26,7 @@ function Header({ user }: Props) {
           {user ? (
             <S.ProfileWrapper>
               <S.Nickname> {user.nickname}</S.Nickname>
-              <S.ProfileIamge src={user.profileImage} alt="profile-iamge" />
+              <Avatar src={user.profileImage} alt="profile-iamge" />
             </S.ProfileWrapper>
           ) : (
             <S.LoginLink color="inherit" href={KAKAO_OAUTH2_URL}>

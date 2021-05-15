@@ -3,9 +3,9 @@ import Header from './header'
 
 export default {
   component: Header,
-  title: 'Header',
+  title: 'Components/Header',
 }
 
-export const primary = () => {
+export const Default = () => {
   return <Header />
 }
