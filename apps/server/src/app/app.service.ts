@@ -8,10 +8,10 @@ export class AppService {
     return { message: 'Welcome to server!' }
   }
 
-  async getKakaoUser(accessToken: string) {
+  async getKakaoUser(authorization: string) {
     const url = `${process.env.KAPI_URL}/v2/user/me`
     const headers = {
-      'Authorization': `Bearer ${accessToken}`,
+      'Authorization': authorization,
       'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
     }
     return this.http.get(url, { headers }).toPromise()

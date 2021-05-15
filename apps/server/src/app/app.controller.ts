@@ -1,4 +1,4 @@
-import { Controller, Get, Query } from '@nestjs/common'
+import { Controller, Get, Headers } from '@nestjs/common'
 import { AppService } from './app.service'
 
 @Controller()
@@ -11,9 +11,9 @@ export class AppController {
   }
 
   @Get('/profile')
-  async getProfile(@Query('token') token: string) {
+  async getProfile(@Headers('Authorization') authorization: string) {
     try {
-      const res = await this.appService.getKakaoUser(token)
+      const res = await this.appService.getKakaoUser(authorization)
       return res.data.properties
     } catch (err) {
       console.log(err)

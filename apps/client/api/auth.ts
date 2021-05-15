@@ -35,9 +35,15 @@ export const getProfile = async (
   onSuccess: ResponseSuccessHandler,
   onError: ResponseErrorHandler
 ) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  }
   await request({
-    url: `/profile?token=${accessToken}`,
+    url: `/profile`,
     onSuccess,
     onError,
+    config,
   })
 }
