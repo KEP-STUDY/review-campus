@@ -5,7 +5,7 @@ import { AxiosError, AxiosResponse } from 'axios'
 import { KakaoProfile, User } from 'interfaces'
 
 function Index() {
-  const [user, setUser] = useState<User>(null)
+  const [user, setUser] = useState<User>()
 
   const handleProfile = (res: AxiosResponse<KakaoProfile>) => {
     const { nickname, profile_image } = res.data

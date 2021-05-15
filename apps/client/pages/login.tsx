@@ -3,6 +3,7 @@ import Router, { useRouter } from 'next/router'
 import { getToken } from 'api/auth'
 import type { AxiosError, AxiosResponse } from 'axios'
 import { Token } from 'interfaces'
+import { Loading } from 'components'
 
 function Login() {
   const { query } = useRouter()
@@ -24,7 +25,7 @@ function Login() {
     Router.push('/')
   }, [query])
 
-  return <div>Logging in...</div>
+  return <Loading />
 }
 
 export default Login
