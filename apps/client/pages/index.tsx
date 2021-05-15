@@ -8,13 +8,12 @@ function Index() {
   const [user, setUser] = useState<User>(null)
 
   const handleProfile = (res: AxiosResponse<KakaoProfile>) => {
-    const { data } = res
-    setUser({ nickname: data.nickname, profileImage: data.profile_image })
+    const { nickname, profile_image } = res.data
+    setUser({ nickname, profileImage: profile_image })
   }
 
   const handleProfileError = (err: AxiosError) => {
-    const { data } = err.response
-    console.log(data.error_description)
+    console.log(err.message)
     alert('프로필 로드 실패')
   }
 

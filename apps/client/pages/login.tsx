@@ -14,8 +14,7 @@ function Login() {
   }
 
   const handleTokenError = (err: AxiosError) => {
-    const { data } = err.response
-    console.log(data.error_description)
+    console.log(err.message)
     alert('로그인 실패')
   }
 
