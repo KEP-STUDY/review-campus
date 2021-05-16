@@ -1,25 +1,19 @@
 import React from 'react'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
-import { ReactComponent as NxLogo } from '../public/nx-logo-white.svg'
-import './styles.css'
+import { ThemeProvider } from 'styled-components'
+import theme from 'utils/theme'
+import { GlobalStyle } from 'styles/global-style'
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Head>
-        <title>Welcome to client!</title>
+        <title>리뷰 캠퍼스</title>
       </Head>
-      <div className="app">
-        <header className="flex">
-          <NxLogo width="75" height="50" />
-          <h1>Welcome to client!</h1>
-        </header>
-        <main>
-          <Component {...pageProps} />
-        </main>
-      </div>
-    </>
+      <GlobalStyle />
+      <Component {...pageProps} />
+    </ThemeProvider>
   )
 }
 
