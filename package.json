@@ -32,15 +32,18 @@
     "@nestjs/common": "^7.0.0",
     "@nestjs/core": "^7.0.0",
     "@nestjs/platform-express": "^7.0.0",
+    "@nestjs/typeorm": "^7.1.5",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "mysql": "^2.18.1",
     "next": "10.0.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-is": "17.0.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.6.3",
-    "styled-components": "5.2.1"
+    "styled-components": "5.2.1",
+    "typeorm": "^0.2.32"
   },
   "devDependencies": {
     "@babel/core": "7.9.6",
